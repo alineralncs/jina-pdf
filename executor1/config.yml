@@ -1,0 +1,3 @@
+jtype: PDFTextPreprocessor
+py_modules:
+  - executor.py
