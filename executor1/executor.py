@@ -10,12 +10,13 @@ nlp = spacy.load("pt_core_news_sm")
 
 class PDFTextPreprocessor(Executor):
     @requests
-    def process(self, docs: DocumentArray, **kwargs) -> DocList[Document]:
+    def process(self, docs: DocumentArray, **kwargs) -> DocumentArray:
         for doc in docs:
             doc = self._get_text_from_pdf(doc.uri)
             # fazer processamento de texto
-            doc = self.preprocess(doc)
-            return doc
+            #doc = self.preprocess(doc)
+        print(docs)
+        return docs
 
     def _get_text_from_pdf(self, pdf_path: str) -> str:
         text = []
